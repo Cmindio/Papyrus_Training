@@ -601,7 +601,9 @@ Ideally, these should be hyperlinked to the actual (electronic) documents, and c
       <generalization xmi:type="uml:Generalization" xmi:id="_hy4kINoBEeekuJ0Xs5scyA" general="_Dl0VINnsEeekuJ0Xs5scyA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_3qetENoCEeekuJ0Xs5scyA" client="_0iBl0NnrEeekuJ0Xs5scyA" supplier="_7pgegNnuEeekuJ0Xs5scyA"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_pThDANoMEee13qZS4n2ioA" name="Database"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pThDANoMEee13qZS4n2ioA" name="Database">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_oLjqsNozEee13qZS4n2ioA" client="_pThDANoMEee13qZS4n2ioA" supplier="_e2VyINoPEee13qZS4n2ioA" contract="_e2VyINoPEee13qZS4n2ioA"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_2c57INoMEee13qZS4n2ioA" name="CustomerDatabase">
       <generalization xmi:type="uml:Generalization" xmi:id="_UpzXkNoNEee13qZS4n2ioA" general="_pThDANoMEee13qZS4n2ioA"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_IuLdoNoOEee13qZS4n2ioA" name="customer" type="_Ct_xwNnrEeekuJ0Xs5scyA" association="_IuJBYNoOEee13qZS4n2ioA">
@@ -617,6 +619,8 @@ Ideally, these should be hyperlinked to the actual (electronic) documents, and c
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_MCobgNoPEee13qZS4n2ioA" name="addProduct"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_NHFiINoPEee13qZS4n2ioA" name="removeProduct"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_CMd5wNoyEee13qZS4n2ioA" name="addNewProduct"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_I4cpkNoyEee13qZS4n2ioA" name="deleteProduct"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_IuJBYNoOEee13qZS4n2ioA" memberEnd="_IuLdoNoOEee13qZS4n2ioA _IuMrwNoOEee13qZS4n2ioA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IuK2kNoOEee13qZS4n2ioA" source="org.eclipse.papyrus">
@@ -635,11 +639,12 @@ Ideally, these should be hyperlinked to the actual (electronic) documents, and c
       <ownedAttribute xmi:type="uml:Property" xmi:id="_6fwaoNoOEee13qZS4n2ioA" name="price">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_D3aGgNoPEee13qZS4n2ioA" name="getStockLevel">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_D3aGgNoPEee13qZS4n2ioA" name="getStockLevel" isQuery="true">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_H9jcgNoPEee13qZS4n2ioA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Gq7CENoyEee13qZS4n2ioA" name="setProductPrice"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_jwLrYNoOEee13qZS4n2ioA" memberEnd="_jwMSctoOEee13qZS4n2ioA _jwNgkNoOEee13qZS4n2ioA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jwMScNoOEee13qZS4n2ioA" source="org.eclipse.papyrus">
@@ -647,12 +652,31 @@ Ideally, these should be hyperlinked to the actual (electronic) documents, and c
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_jwNgkNoOEee13qZS4n2ioA" name="productdatabase" type="_MZ6lANoNEee13qZS4n2ioA" association="_jwLrYNoOEee13qZS4n2ioA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_e2VyINoPEee13qZS4n2ioA" name="DatabaseIF"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_1j5vMNoPEee13qZS4n2ioA" name="Customer User Interface"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_e2VyINoPEee13qZS4n2ioA" name="DatabaseIF">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_gVNO8NoyEee13qZS4n2ioA" name="query">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_B-2fENozEee13qZS4n2ioA" name="database" type="_pThDANoMEee13qZS4n2ioA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_sGV6sNoyEee13qZS4n2ioA" name="SQL">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kSarYNoyEee13qZS4n2ioA" name="update">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_J9H9MNozEee13qZS4n2ioA" name="database" type="_pThDANoMEee13qZS4n2ioA"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_uZDkMNoyEee13qZS4n2ioA" name="SQL">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1j5vMNoPEee13qZS4n2ioA" name="Customer User Interface">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_366fgNozEee13qZS4n2ioA" client="_1j5vMNoPEee13qZS4n2ioA" supplier="_yC7YcNozEee13qZS4n2ioA" contract="_yC7YcNozEee13qZS4n2ioA"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Usage" xmi:id="_OcINANoQEee13qZS4n2ioA" client="_1j5vMNoPEee13qZS4n2ioA" supplier="_Ct_xwNnrEeekuJ0Xs5scyA"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_U2XFgNoQEee13qZS4n2ioA" name="User Database">
       <generalization xmi:type="uml:Generalization" xmi:id="_aViD8NoQEee13qZS4n2ioA" general="_pThDANoMEee13qZS4n2ioA"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xyFN8toQEee13qZS4n2ioA" name="user" type="_0iBl0NnrEeekuJ0Xs5scyA" aggregation="composite" association="_xyEm4NoQEee13qZS4n2ioA"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Z4y3ENowEee13qZS4n2ioA" name="createNewUser"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dgUXYNowEee13qZS4n2ioA" name="deleteUser"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fjo6ANowEee13qZS4n2ioA" name="getUserInfo"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_hTAl4NowEee13qZS4n2ioA" name="updateUserInfo"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_xyEm4NoQEee13qZS4n2ioA" memberEnd="_xyFN8toQEee13qZS4n2ioA _xyFN89oQEee13qZS4n2ioA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xyFN8NoQEee13qZS4n2ioA" source="org.eclipse.papyrus">
@@ -660,6 +684,7 @@ Ideally, these should be hyperlinked to the actual (electronic) documents, and c
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_xyFN89oQEee13qZS4n2ioA" name="user database" type="_U2XFgNoQEee13qZS4n2ioA" association="_xyEm4NoQEee13qZS4n2ioA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_yC7YcNozEee13qZS4n2ioA" name="UserInterface"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_0TbLMMWJEeePHsNSFaSozA" name="Component Model">
     <packagedElement xmi:type="uml:Dependency" xmi:id="_ptz_oMl0EeeimMxafi-0tw" client="_0TbLMMWJEeePHsNSFaSozA" supplier="_ieq-4MMSEeePHsNSFaSozA"/>
