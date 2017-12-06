@@ -739,16 +739,87 @@ Ideally, these should be hyperlinked to the actual (electronic) documents, and c
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_0TbLMMWJEeePHsNSFaSozA" name="Component Model">
     <packagedElement xmi:type="uml:Dependency" xmi:id="_ptz_oMl0EeeimMxafi-0tw" client="_0TbLMMWJEeePHsNSFaSozA" supplier="_ieq-4MMSEeePHsNSFaSozA"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_IaLR0No1Eee13qZS4n2ioA" name="&lt;&lt;model>> DataBases"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_K8NJsNo1Eee13qZS4n2ioA" name="&lt;&lt;controler>> WebUI">
-      <packagedElement xmi:type="uml:Usage" xmi:id="_86A9INo7Eee13qZS4n2ioA" client="_K8NJsNo1Eee13qZS4n2ioA" supplier="_P0MzYNo1Eee13qZS4n2ioA"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_hxeS0NqZEee13qZS4n2ioA" name="&lt;&lt;subsystem>> Warehouse">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DxiSUNqvEee13qZS4n2ioA" name="inventory" type="_U7J1wNqbEee13qZS4n2ioA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_McT0oNqwEee13qZS4n2ioA" name="searchEngine" visibility="public" type="_Gc4o0NqwEee13qZS4n2ioA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_P0MzYNo1Eee13qZS4n2ioA" name="&lt;&lt;view>> WebInterface"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_cM4OANo6Eee13qZS4n2ioA" name="&lt;&lt;view>> Database Interface"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_dp6XQNo7Eee13qZS4n2ioA" name="&lt;&lt;controler>> databaseAccess">
-      <packagedElement xmi:type="uml:Usage" xmi:id="_67vSkNo7Eee13qZS4n2ioA" client="_dp6XQNo7Eee13qZS4n2ioA" supplier="_cM4OANo6Eee13qZS4n2ioA"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_uQXccNqZEee13qZS4n2ioA" name="&lt;&lt;subsystem>> Accounting">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_NP8tgNqvEee13qZS4n2ioA" name="orders" type="_G1b9oNquEee13qZS4n2ioA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SRt-QNqvEee13qZS4n2ioA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SRxooNqvEee13qZS4n2ioA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_T4sjINqvEee13qZS4n2ioA" name="Customers" type="_sgB6sNquEee13qZS4n2ioA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_NR-DkNqrEee13qZS4n2ioA" client="_uQXccNqZEee13qZS4n2ioA" supplier="_TT738NqpEee13qZS4n2ioA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ZuXS0NqrEee13qZS4n2ioA" client="_uQXccNqZEee13qZS4n2ioA" supplier="_Bf6csNqpEee13qZS4n2ioA" contract="_Bf6csNqpEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_fYKvwNqyEee13qZS4n2ioA" client="__0pxANo1Eee13qZS4n2ioA" supplier="_uQXccNqZEee13qZS4n2ioA" realizingClassifier="__0pxANo1Eee13qZS4n2ioA"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_ldqncNo7Eee13qZS4n2ioA" name="DBInterface"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_1QTDANqZEee13qZS4n2ioA" name="ShoppingCart">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_Ny0WkNqaEee13qZS4n2ioA" name="Port1" aggregation="composite"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_nx1xcNqnEee13qZS4n2ioA" client="_1QTDANqZEee13qZS4n2ioA" supplier="_5PnCINqiEee13qZS4n2ioA" contract="_5PnCINqiEee13qZS4n2ioA"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_bN5TQNqoEee13qZS4n2ioA" name="ShoppingCart">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_bN5TQdqoEee13qZS4n2ioA" name="Port1" aggregation="composite"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_aP8AwNqpEee13qZS4n2ioA" client="_bN5TQNqoEee13qZS4n2ioA" supplier="_TT738NqpEee13qZS4n2ioA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Component" xmi:id="_bN7vgNqoEee13qZS4n2ioA" name="Authentication">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_8RX7QNqoEee13qZS4n2ioA" client="_bN7vgNqoEee13qZS4n2ioA" supplier="_AcEJINqgEee13qZS4n2ioA" contract="_AcEJINqgEee13qZS4n2ioA"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_Hu6VkNqpEee13qZS4n2ioA" client="_bN7vgNqoEee13qZS4n2ioA" supplier="_Bf6csNqpEee13qZS4n2ioA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_6aakMNqpEee13qZS4n2ioA" client="_1QTDANqZEee13qZS4n2ioA" supplier="_TT738NqpEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_8kac8NqxEee13qZS4n2ioA" client="_oC12YNntEeekuJ0Xs5scyA" supplier="_1QTDANqZEee13qZS4n2ioA" realizingClassifier="_oC12YNntEeekuJ0Xs5scyA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_PU_KkNqzEee13qZS4n2ioA" client="_-maCkNnwEeekuJ0Xs5scyA" supplier="_1QTDANqZEee13qZS4n2ioA" realizingClassifier="_-maCkNnwEeekuJ0Xs5scyA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_1wE50NqaEee13qZS4n2ioA" name="&lt;&lt;subsystem>> WebStore">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Obaq0NqeEee13qZS4n2ioA" name="shoppingCart" type="_1QTDANqZEee13qZS4n2ioA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RRQ2kNqeEee13qZS4n2ioA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RRT54NqeEee13qZS4n2ioA" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LNtt0NqgEee13qZS4n2ioA" name="authentication" type="_94pxMNqfEee13qZS4n2ioA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ENZCgNqcEee13qZS4n2ioA" client="_1wE50NqaEee13qZS4n2ioA" supplier="__v-RcNqaEee13qZS4n2ioA" contract="__v-RcNqaEee13qZS4n2ioA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Y-10ANqjEee13qZS4n2ioA" client="_1wE50NqaEee13qZS4n2ioA" supplier="_mSJWwNqbEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_jefr8NqyEee13qZS4n2ioA" client="_jy0ZwNo8Eee13qZS4n2ioA" supplier="_1wE50NqaEee13qZS4n2ioA" realizingClassifier="_jy0ZwNo8Eee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_xgoJ8NqyEee13qZS4n2ioA" client="_yC7YcNozEee13qZS4n2ioA" supplier="_1wE50NqaEee13qZS4n2ioA" realizingClassifier="_yC7YcNozEee13qZS4n2ioA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_94pxMNqfEee13qZS4n2ioA" name="Authentication">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_mHbzMNqpEee13qZS4n2ioA" client="_94pxMNqfEee13qZS4n2ioA" supplier="_AcEJINqgEee13qZS4n2ioA" contract="_AcEJINqgEee13qZS4n2ioA"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_17ErENqpEee13qZS4n2ioA" client="_94pxMNqfEee13qZS4n2ioA" supplier="_Bf6csNqpEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_Li0ggNqzEee13qZS4n2ioA" client="_7pgegNnuEeekuJ0Xs5scyA" supplier="_94pxMNqfEee13qZS4n2ioA" realizingClassifier="_7pgegNnuEeekuJ0Xs5scyA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_thY3wNqzEee13qZS4n2ioA" client="_0iBl0NnrEeekuJ0Xs5scyA" supplier="_94pxMNqfEee13qZS4n2ioA" realizingClassifier="_0iBl0NnrEeekuJ0Xs5scyA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_i3xvYNqgEee13qZS4n2ioA" name="Interfaces">
+      <packagedElement xmi:type="uml:Interface" xmi:id="__v-RcNqaEee13qZS4n2ioA" name="WebIF">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_zJoxINqcEee13qZS4n2ioA" name="search"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_0z-MANqcEee13qZS4n2ioA" name="browse"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_3gXg0NqcEee13qZS4n2ioA" name="addToCart"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_75k8wNqcEee13qZS4n2ioA" name="removeFromCart"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_A5aT0NqdEee13qZS4n2ioA" name="checkOut"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_mSJWwNqbEee13qZS4n2ioA" name="ProductSearch"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_AcEJINqgEee13qZS4n2ioA" name="Authenticate"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_5PnCINqiEee13qZS4n2ioA" name="ShopingCartRequests"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_HUdVkNqmEee13qZS4n2ioA" name="SearchResults"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Wf5vkNqnEee13qZS4n2ioA" client="_mSJWwNqbEee13qZS4n2ioA" supplier="_mSJWwNqbEee13qZS4n2ioA"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_5v9j4NqnEee13qZS4n2ioA" name="CustomerSession"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_Bf6csNqpEee13qZS4n2ioA" name="ManageCustomers"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_TT738NqpEee13qZS4n2ioA" name="ManageOrders"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_U7J1wNqbEee13qZS4n2ioA" name="Inventory">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LvIqwNqeEee13qZS4n2ioA" name="searchEngine" type="_Gc4o0NqwEee13qZS4n2ioA"/>
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_M2e24NqqEee13qZS4n2ioA" client="_U7J1wNqbEee13qZS4n2ioA" supplier="_mSJWwNqbEee13qZS4n2ioA" contract="_mSJWwNqbEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_Hf7IQNqyEee13qZS4n2ioA" client="_MZ6lANoNEee13qZS4n2ioA" supplier="_U7J1wNqbEee13qZS4n2ioA" realizingClassifier="_MZ6lANoNEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_b-sSgNqyEee13qZS4n2ioA" client="_huA_UNoOEee13qZS4n2ioA" supplier="_U7J1wNqbEee13qZS4n2ioA" realizingClassifier="_huA_UNoOEee13qZS4n2ioA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_G1b9oNquEee13qZS4n2ioA" name="Orders">
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_gQnasNqyEee13qZS4n2ioA" client="__0pxANo1Eee13qZS4n2ioA" supplier="_G1b9oNquEee13qZS4n2ioA" realizingClassifier="__0pxANo1Eee13qZS4n2ioA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_sgB6sNquEee13qZS4n2ioA" name="Customers">
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_z13YcNqxEee13qZS4n2ioA" client="_Ct_xwNnrEeekuJ0Xs5scyA" supplier="_sgB6sNquEee13qZS4n2ioA" realizingClassifier="_Ct_xwNnrEeekuJ0Xs5scyA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_4r0awNqxEee13qZS4n2ioA" client="_2c57INoMEee13qZS4n2ioA" supplier="_sgB6sNquEee13qZS4n2ioA" realizingClassifier="_2c57INoMEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_oiM2YNqyEee13qZS4n2ioA" client="_YTGVgNo5Eee13qZS4n2ioA" supplier="_sgB6sNquEee13qZS4n2ioA" realizingClassifier="_YTGVgNo5Eee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_tiCNcNqyEee13qZS4n2ioA" client="_VdceYNo2Eee13qZS4n2ioA" supplier="_sgB6sNquEee13qZS4n2ioA" realizingClassifier="_VdceYNo2Eee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_5uC3UNqyEee13qZS4n2ioA" client="_U2XFgNoQEee13qZS4n2ioA" supplier="_sgB6sNquEee13qZS4n2ioA" realizingClassifier="_U2XFgNoQEee13qZS4n2ioA"/>
+      <realization xmi:type="uml:ComponentRealization" xmi:id="_HHtAENqzEee13qZS4n2ioA" client="_Dl0VINnsEeekuJ0Xs5scyA" supplier="_sgB6sNquEee13qZS4n2ioA" realizingClassifier="_Dl0VINnsEeekuJ0Xs5scyA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_Gc4o0NqwEee13qZS4n2ioA" name="SearchEngine"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_5680YMWJEeePHsNSFaSozA" name="Deployment Model">
     <packagedElement xmi:type="uml:Dependency" xmi:id="_kkcf0Ml5EeeimMxafi-0tw" client="_5680YMWJEeePHsNSFaSozA" supplier="_0TbLMMWJEeePHsNSFaSozA"/>
